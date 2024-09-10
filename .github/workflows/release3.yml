@@ -3,7 +3,7 @@ name: Build IPK
 on:
   push:
     branches:
-      - master
+      - dev
     paths:
       - 'Makefile'
   workflow_dispatch:
