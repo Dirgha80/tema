@@ -27,7 +27,7 @@ jobs:
           
           echo -e "\033[34m🔧 Configuring environment \033[0m"
           PKG_NAME=$(basename ${{ github.repository }})
-          PKG_VERSION=$(grep -oP 'PKG_VERSION:=\K.*' Makefile)
+          PKG_VERSION=$(grep -oP 'PKG_VERSION:=\K.*' luci-theme-hj/Makefile)
           export TERM=xterm
           echo "PKG_VERSION=$PKG_VERSION" >> $GITHUB_ENV
           echo "PKG_NAME=$PKG_NAME" >> $GITHUB_ENV
@@ -43,7 +43,7 @@ jobs:
 
           echo -e "\033[34m📦 Cloning $PKG_NAME package \033[0m"
           git clone -q https://github.com/${{ github.repository }} sdk/package/${PKG_NAME}
-          chmod +x sdk/package/${PKG_NAME}/root/usr/share/speedtest/schedule
+         # chmod +x sdk/package/${PKG_NAME}/root/usr/share/speedtest/schedule
 
       - name: 📡 Set up SDK feeds
         run: |
